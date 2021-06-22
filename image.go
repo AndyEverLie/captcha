@@ -18,9 +18,9 @@ const (
 	StdWidth  = 95
 	StdHeight = 38
 	// Maximum absolute skew factor of a single digit.
-	maxSkew = 0.7
+	maxSkew = 0.2
 	// Number of background circles.
-	circleCount = 20
+	circleCount = 10
 )
 
 type Image struct {
