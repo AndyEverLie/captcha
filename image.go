@@ -15,8 +15,8 @@ import (
 
 const (
 	// Standard width and height of a captcha image.
-	StdWidth  = 240
-	StdHeight = 80
+	StdWidth  = 95
+	StdHeight = 38
 	// Maximum absolute skew factor of a single digit.
 	maxSkew = 0.7
 	// Number of background circles.
@@ -57,10 +57,10 @@ func NewImage(id string, digits []byte, width, height int) *Image {
 		m.drawDigit(font[n], x, y)
 		x += m.numWidth + m.dotSize
 	}
-	// Draw strike-through line.
-	m.strikeThrough()
-	// // Apply wave distortion.
-	// m.distort(m.rng.Float(5, 10), m.rng.Float(100, 200))
+	// // Draw strike-through line.
+	// m.strikeThrough()
+	// Apply wave distortion.
+	m.distort(m.rng.Float(5, 10), m.rng.Float(100, 200))
 	// Fill image with random circles.
 	m.fillWithCircles(circleCount, m.dotSize)
 	return m
